@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     CrossStorageHub.init([
       {origin: /.*localhost:300\d$/, allow: ['get']},
-      {origin: /[a-z A-Z 1-9]+\.xvercel\.ml$/, allow: ['get', 'set', 'del']}
+      {origin: /[a-z A-Z 1-9]+\.xvercel\.ml$/, allow: ['get']}
     ]);
   })
   return (
