@@ -1,22 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import {useEffect} from 'react'
+import { CrossStorageHub } from 'cross-storage/lib/index'
+
+
 
 function App() {
+  useEffect(() => {
+    CrossStorageHub.init([
+      {origin: /.*localhost:300\d$/, allow: ['get']}
+      // {origin: /[a-z A-Z 1-9]+\.builtwithframe\.com$/, allow: ['get', 'set', 'del']}
+    ]);
+  })
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Testing.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
